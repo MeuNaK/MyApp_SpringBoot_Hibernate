@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<header>
+  <h2>User registration</h2>
+</header>
+<body>
+<form th:action="@{/user}" th:object="${newUser}" method="post" >
+    <input th:field="*{id}" type="hidden" id="id"><!-- скрытая форма чтобы не терять id пользователя при update-->
+
+    <label>Name</label>
+    <input th:field="*{name}" type="text" id="name">
+    <br>
+    <label>LVL</label>
+    <input th:field="*{lvl}" type="text" id="lvl">
+    <br>
+    <label>Coins</label>
+    <input th:field="*{coins}" type="text" id="coins">
+    <br>
+    <input type="submit" value="Save user">
+</form>
+
+</body>
+</html>
